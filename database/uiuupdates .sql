@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2023 at 10:47 AM
+-- Generation Time: Oct 17, 2023 at 03:56 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ocean`
+-- Database: `uiuupdates`
 --
 
 -- --------------------------------------------------------
@@ -61,7 +61,9 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `post_body`, `posted_by`, `posted_to`, `date_added`, `removed`, `post_id`) VALUES
-(9, 'Hey', 'Kabirulhossain', 'Kabirulhossain', '2023-07-27 12:30:54', 'no', 115);
+(21, 'good nd u?', 'Kader', 'Kader', '2023-08-25 13:09:06', 'no', 144),
+(24, 'hey im fine', 'Misbah', 'Kader', '2023-08-28 20:14:25', 'no', 144),
+(25, ',khjjk', 'Kader', 'Kader', '2023-08-29 15:03:45', 'no', 154);
 
 -- --------------------------------------------------------
 
@@ -74,6 +76,13 @@ CREATE TABLE `friend_requests` (
   `user_to` varchar(100) NOT NULL,
   `user_from` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `friend_requests`
+--
+
+INSERT INTO `friend_requests` (`id`, `user_to`, `user_from`) VALUES
+(18, 'Sheikrakin', 'Pak');
 
 -- --------------------------------------------------------
 
@@ -92,7 +101,19 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`id`, `username`, `post_id`) VALUES
-(31, 'Kabirulhossain', 115);
+(33, 'Sheikrakin', 116),
+(34, 'admin', 117),
+(35, 'Kabirulhossain', 117),
+(36, 'Pak', 120),
+(37, 'Pak', 122),
+(38, 'Pak', 121),
+(39, 'Pak', 117),
+(40, 'Tanzim', 132),
+(41, 'Kader', 144),
+(42, 'Misbah', 144),
+(43, 'Misbah', 149),
+(44, 'Kader', 149),
+(45, 'Kader', 154);
 
 -- --------------------------------------------------------
 
@@ -117,7 +138,20 @@ CREATE TABLE `messages` (
 
 INSERT INTO `messages` (`id`, `user_to`, `user_from`, `body`, `date`, `opened`, `viewed`, `deleted`) VALUES
 (38, '@Kabirul', 'Sheikrakin', 'Hello', '2023-07-27 14:05:58', 'no', 'no', 'no'),
-(39, '@Sheikh', 'Kabirulhossain', 'hi\r\n', '2023-07-27 14:07:38', 'no', 'no', 'no');
+(40, 'Kader', 'Misbah', 'hi kader', '2023-08-25 13:11:12', 'yes', 'no', 'no'),
+(41, 'Kader', 'Misbah', 'ki korcho\r\n', '2023-08-25 13:11:22', 'yes', 'no', 'no'),
+(42, 'Misbah', 'Kader', 'bose aci\r\n', '2023-08-25 13:12:31', 'yes', 'no', 'no'),
+(43, 'Misbah', 'Kader', 'tumi', '2023-08-25 13:12:35', 'yes', 'no', 'no'),
+(44, 'Misbah', 'Misbah', 'yauuuuuuu', '2023-08-25 13:15:32', 'yes', 'no', 'no'),
+(45, 'Misbah', 'Misbah', 'hjhyf', '2023-08-25 13:15:58', 'yes', 'no', 'no'),
+(46, 'Kader', 'Misbah', 'amio same', '2023-08-25 13:16:10', 'yes', 'no', 'no'),
+(47, 'Kader', 'Misbah', 'hiii', '2023-08-28 17:19:45', 'yes', 'no', 'no'),
+(48, 'Kader', 'Misbah', 'hii\r\n', '2023-08-28 17:20:04', 'yes', 'no', 'no'),
+(49, 'Kader', 'Misbah', 'ki korcho', '2023-08-28 17:20:48', 'yes', 'no', 'no'),
+(50, 'Misbah', 'Kader', 'bose\r\ntui\r\n', '2023-08-28 17:21:31', 'yes', 'no', 'no'),
+(51, 'Kader', 'Misbah', 'bhalo aco tumi\r\n', '2023-08-28 17:24:30', 'yes', 'no', 'no'),
+(52, 'Misbah', 'Kader', 'hlrrrrrrrr', '2023-08-28 18:00:06', 'yes', 'no', 'no'),
+(58, 'Misbah', 'Kader', 'asdfg', '2023-08-29 16:34:01', 'yes', 'no', 'no');
 
 -- --------------------------------------------------------
 
@@ -141,8 +175,10 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `body`, `added_by`, `date_added`, `user_closed`, `deleted`, `likes`, `image`) VALUES
-(115, 'Hello Guys', 'Kabirulhossain', '2023-07-27 12:30:31', 'no', 'no', 1, ''),
-(116, 'I need to ML lecture video!!!!!!!!', 'Sheikrakin', '2023-07-27 12:37:13', 'no', 'no', 0, '');
+(144, 'hi all kemon acho\r\n', 'Kader', '2023-08-25 12:56:41', 'no', 'no', 2, ''),
+(149, 'heeeeey guys. can anyone describe this?', 'Misbah', '2023-08-25 13:14:52', 'no', 'no', 2, 'assets/images/posts/64e854ec19b04Screenshot (3).png'),
+(154, 'Mediconnect img', 'Kader', '2023-08-29 14:55:43', 'no', 'no', 1, 'assets/images/posts/64edb28f33622mediconnectbackground3.jpg'),
+(155, 'asdfgtydfg', 'Misbah', '2023-08-29 16:34:57', 'no', 'no', 0, '');
 
 -- --------------------------------------------------------
 
@@ -180,8 +216,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `dob`, `gender`, `password`, `signup_date`, `profile_pic`, `cover_pic`, `num_posts`, `num_likes`, `user_closed`, `friend_array`, `address`, `city`, `hometown`, `country`, `bio`, `phone`, `work`) VALUES
-(110, 'Kabirul', 'Hossain', 'Kabirulhossain', 'k@gmail.com', '2001-12-31', 'Male', '12345kabirul', '2023-07-27', 'assets/images/profile_pics/defaults/male.png', 'assets/images/cover_pics/d-cover.jpg', 1, 1, 'no', ',', '', '', '', '', NULL, NULL, ''),
-(111, 'Sheikh', 'Rakin', 'Sheikrakin', 's@gmail.com', '2000-12-15', 'Male', '12345sheikh', '2023-07-27', 'assets/images/profile_pics/defaults/male.png', 'assets/images/cover_pics/d-cover.jpg', 1, 0, 'no', ',', '', '', '', '', NULL, NULL, '');
+(118, 'Abdul', 'Kader', 'Kader', 'k@gmail.com', '2023-08-15', 'Female', '12345kader', '2023-08-24', 'assets/images/profile_pics/defaults/female.png', 'assets/images/cover_pics/d-cover.jpg', 8, 3, 'no', ',Misbah,', '', '', '', '', NULL, NULL, ''),
+(119, 'Misbah', 'Uddin', 'Misbah', 'm@gmail.com', '2023-08-15', 'Male', '12345misbah', '2023-08-24', 'assets/images/profile_pics/defaults/male.png', 'assets/images/cover_pics/d-cover.jpg', 2, 2, 'no', ',Kader,Umar,', '', '', '', '', NULL, NULL, ''),
+(124, 'Umar', 'Hossain', 'Umar', 'u@gmail.com', '2000-08-30', 'Male', '12345umar', '2023-08-29', 'assets/images/profile_pics/defaults/male.png', 'assets/images/cover_pics/d-cover.jpg', 0, 0, 'no', ',', '', '', '', '', NULL, NULL, '');
 
 --
 -- Indexes for dumped tables
@@ -244,37 +281,37 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `friend_requests`
 --
 ALTER TABLE `friend_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
